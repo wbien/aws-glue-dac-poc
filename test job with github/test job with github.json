@@ -1,0 +1,39 @@
+{
+  "name" : "test job with github",
+  "description" : "",
+  "role" : "arn:aws:iam::593255404196:role/service-role/AWSGlueServiceRole",
+  "executionProperty" : {
+    "maxConcurrentRuns" : 1
+  },
+  "command" : {
+    "name" : "glueetl",
+    "scriptLocation" : "s3://aws-glue-assets-593255404196-eu-central-1/scripts/test job with github.py",
+    "pythonVersion" : "3"
+  },
+  "defaultArguments" : {
+    "--enable-metrics" : "true",
+    "--enable-spark-ui" : "true",
+    "--spark-event-logs-path" : "s3://aws-glue-assets-593255404196-eu-central-1/sparkHistoryLogs/",
+    "--enable-job-insights" : "true",
+    "--enable-glue-datacatalog" : "true",
+    "--enable-continuous-cloudwatch-log" : "true",
+    "--job-bookmark-option" : "job-bookmark-disable",
+    "--job-language" : "python",
+    "--TempDir" : "s3://aws-glue-assets-593255404196-eu-central-1/temporary/"
+  },
+  "maxRetries" : 0,
+  "allocatedCapacity" : 10,
+  "timeout" : 2880,
+  "maxCapacity" : 10.0,
+  "glueVersion" : "3.0",
+  "numberOfWorkers" : 10,
+  "workerType" : "G.1X",
+  "executionClass" : "STANDARD",
+  "codeGenConfigurationNodes" : "{\"node-1681313242776\":{\"Filter\":{\"Filters\":[],\"Inputs\":[\"node-1681312859734\"],\"LogicalOperator\":\"AND\",\"Name\":\"Filter\"}},\"node-1681312859734\":{\"S3JsonSource\":{\"AdditionalOptions\":{\"EnableSamplePath\":false,\"SamplePath\":\"\"},\"Exclusions\":[],\"JsonPath\":\"\",\"Multiline\":false,\"Name\":\"Amazon S3\",\"OutputSchemas\":[{\"Columns\":[{\"Name\":\"new-item-qcqa7\",\"Type\":\"string\"}]}],\"Paths\":[\"s3://contentful-ui-extensions.dacsoftware.tech/tinymce-legacy/extension.json\"]}}}",
+  "sourceControlDetails" : {
+    "provider" : "GITHUB",
+    "repository" : "aws-glue-dac-poc",
+    "branch" : "main",
+    "folder" : "test job with github"
+  }
+}
