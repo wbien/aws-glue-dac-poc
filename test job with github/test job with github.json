@@ -29,7 +29,7 @@
   "numberOfWorkers" : 10,
   "workerType" : "G.1X",
   "executionClass" : "STANDARD",
-  "codeGenConfigurationNodes" : "{\"node-1681313242776\":{\"Filter\":{\"Filters\":[],\"Inputs\":[\"node-1681312859734\"],\"LogicalOperator\":\"AND\",\"Name\":\"Filter\"}},\"node-1681312859734\":{\"S3JsonSource\":{\"AdditionalOptions\":{\"EnableSamplePath\":false,\"SamplePath\":\"\"},\"Exclusions\":[],\"JsonPath\":\"\",\"Multiline\":true,\"Name\":\"Amazon S3\",\"OutputSchemas\":[{\"Columns\":[{\"Name\":\"name\",\"Type\":\"string\"}]}],\"Paths\":[\"s3://contentful-ui-extensions.dacsoftware.tech/tinymce-legacy/extension.json\"]}}}",
+  "codeGenConfigurationNodes" : "{\"node-1681313242776\":{\"Filter\":{\"Filters\":[{\"Negated\":false,\"Operation\":\"REGEX\",\"Values\":[{\"Type\":\"CONSTANT\",\"Value\":[\"tinymce-legacy\"]},{\"Type\":\"COLUMNEXTRACTED\",\"Value\":[\"name\"]}]}],\"Inputs\":[\"node-1681312859734\"],\"LogicalOperator\":\"AND\",\"Name\":\"Filter\"}},\"node-1681312859734\":{\"S3JsonSource\":{\"AdditionalOptions\":{\"EnableSamplePath\":false,\"SamplePath\":\"\"},\"Exclusions\":[],\"JsonPath\":\"\",\"Multiline\":true,\"Name\":\"Amazon S3\",\"OutputSchemas\":[{\"Columns\":[{\"Name\":\"name\",\"Type\":\"string\"}]}],\"Paths\":[\"s3://contentful-ui-extensions.dacsoftware.tech/tinymce-legacy/extension.json\"]}}}",
   "sourceControlDetails" : {
     "provider" : "GITHUB",
     "repository" : "aws-glue-dac-poc",
