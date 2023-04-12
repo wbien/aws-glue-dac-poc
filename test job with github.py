@@ -15,7 +15,7 @@ job.init(args["JOB_NAME"], args)
 
 # Script generated for node Amazon S3
 AmazonS3_node1681312859734 = glueContext.create_dynamic_frame.from_options(
-    format_options={"multiline": False},
+    format_options={"multiline": True},
     connection_type="s3",
     format="json",
     connection_options={
@@ -29,7 +29,7 @@ AmazonS3_node1681312859734 = glueContext.create_dynamic_frame.from_options(
 # Script generated for node Filter
 Filter_node1681313242776 = Filter.apply(
     frame=AmazonS3_node1681312859734,
-    f=lambda row: (),
+    f=lambda row: (bool(re.match("tinymce-legacy", row["name"]))),
     transformation_ctx="Filter_node1681313242776",
 )
 
